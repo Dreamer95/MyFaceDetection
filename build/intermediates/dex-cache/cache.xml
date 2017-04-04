@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/26f9556cb9c6da16288e1a9face7c7d1a4af0c1d/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_f6eae362637c26acbe74ce81ba1c0680c8b284e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/11a1a0cb0e5a9aee9c2a3b2eb4ded5840de25b14/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_370d3ea6e4cc6eb250b7637a17bb99393c127509/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/117c6e9e55d41b2e9b53b9023d33e9d6bf1d7c45/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_19fd3cfd1287bcc570f4e6d4a31e156b5215bb10/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/3f975e1c9be4294c3b15bbeba8aaac3d5b8ef2e7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_117971ec7eb2b7f60ba7cd2f33bdb0f5191c37bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5ab10c9779e8ef8d1f8fe93d38537d2e2e525ed3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_29a13095c7a1a40c77fc90f092fe8ded2e6eaa55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5109175afa51b96d7a1ebdb3708843cd47849503/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0f3e55242c848144b24e85dc1552465f9a67b12c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/3f975e1c9be4294c3b15bbeba8aaac3d5b8ef2e7/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_8ada18f96acd813a1cdc75b82554ba7a4a4b3586/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5ca27948a63f5b009c1b041970b3b584c489e41b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6703f3c8bba1124af2f53ca7c5ebc46e50ef6ef1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/26f9556cb9c6da16288e1a9face7c7d1a4af0c1d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_17c993a643dbd3cf1350e34becd702da52f8106d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5d30875bfe83610a0772508d20ad6026394ae604/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b90f3e47e233a08e1bcb120921631696591c60eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d8f04038b33931ca15d2961b0b0d059e579ed1dc">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0b9a23b9d94c54e008b9613e1503a951012ada02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5782492233875a5a46be04a4fc96768760f8b649/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_996170036d80d016a986172b378f7ca226b68a2d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5ca27948a63f5b009c1b041970b3b584c489e41b/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_06cba932d1e1590c5469b46ad3fd88bd676c9828/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5109175afa51b96d7a1ebdb3708843cd47849503/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_b1c146d785c1b457a36cc19117f0ce46024285dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/5d30875bfe83610a0772508d20ad6026394ae604/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_4d3b63ec7b4914a4587a0716a3da54adfeb9de62/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_65c725a901d9aeae22b262e0a3f9deb2f991a93b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/71a94f48af3ef0f8a60bbf704b04b8164e3423fc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_51b1b2fb0946f20bd818d956736c83479b62e0ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/.android/build-cache/afbf66929e3dae4b786e5c5a7c9572b26cd5ab0f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_90ab3fae0c8c974124e4eba29d0d74746d10d6c3/classes.dex" />
+    </item>
+
+</items>
