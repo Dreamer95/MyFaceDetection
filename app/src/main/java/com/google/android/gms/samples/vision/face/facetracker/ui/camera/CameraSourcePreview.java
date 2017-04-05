@@ -18,6 +18,7 @@ package com.google.android.gms.samples.vision.face.facetracker.ui.camera;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -124,8 +125,12 @@ public class CameraSourcePreview extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        //DisplayMetrics metrics = new DisplayMetrics();
+
         int width = 320;
         int height = 240;
+//        int width = metrics.widthPixels;
+//        int height = metrics.heightPixels;
         if (mCameraSource != null) {
             Size size = mCameraSource.getPreviewSize();
             if (size != null) {

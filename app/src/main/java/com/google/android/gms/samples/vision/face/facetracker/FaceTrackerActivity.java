@@ -37,12 +37,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.phenotype.Configuration;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.Tracker;
@@ -78,6 +81,8 @@ public final class FaceTrackerActivity extends AppCompatActivity {
     Button switch_camera;
     Button take_camera;
     Button btn_gallery;
+    Button btn_effect;
+    private Context mContext;
     private int current_camera = 0;
     private static final int PICK_IMAGE = 0;
     private Uri mCapturedImageURI;
@@ -103,7 +108,8 @@ public final class FaceTrackerActivity extends AppCompatActivity {
         mGraphicOverlay = (GraphicOverlay) findViewById(R.id.faceOverlay);
         switch_camera = (Button) findViewById(R.id.switch_camera);
         take_camera = (Button) findViewById(R.id.take_camera);
-        btn_gallery = (Button)findViewById(R.id.gallery);
+        btn_gallery = (Button) findViewById(R.id.gallery);
+        btn_effect = (Button) findViewById(R.id.effect);
 
 
         // Check for the camera permission before accessing the camera.  If the
@@ -134,9 +140,13 @@ public final class FaceTrackerActivity extends AppCompatActivity {
                     }
                 } catch (RuntimeException e) {
 
-                    Toast toast = Toast.makeText(FaceTrackerActivity.this, "Failed", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(FaceTrackerActivity.this, "Device do not support front camera", Toast.LENGTH_SHORT);
                     toast.show();
-                    return;
+                    current_camera = 0;
+                    mPreview.stop();
+                    createCameraSource();
+                    startCameraSource();
+                    //  continue;
                 }
 
             }
@@ -144,51 +154,146 @@ public final class FaceTrackerActivity extends AppCompatActivity {
 
 
         take_camera.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+
                 mCameraSource.takePicture(null, new CameraSource.PictureCallback() {
+                    private File imageFile;
 
                     @Override
                     public void onPictureTaken(byte[] bytes) {
-                        Log.d(TAG, "onPictureTaken - jpeg");
-                        capturePic(bytes);
-                    }
-
-                    private void capturePic(byte[] bytes) {
                         try {
-                           // String mainpath = getExternalStorageDirectory() + separator + "MaskIt" + separator + "images" + separator;
-                            String mainpath = getExternalStorageDirectory() + separator + "DCIM" + separator + "Camera" + separator;
-                            File basePath = new File(mainpath);
-                            if (!basePath.exists())
-                                Log.d("CAPTURE_BASE_PATH", basePath.mkdirs() ? "Success": "Failed");
-                            File captureFile = new File(mainpath + "photo_" + getPhotoTime() + ".jpg");
-                            if (!captureFile.exists())
-                                Log.d("CAPTURE_FILE_PATH", captureFile.createNewFile() ? "Success": "Failed");
-                            FileOutputStream stream = new FileOutputStream(captureFile);
-                            stream.write(bytes);
-                            stream.flush();
-                            stream.close();
-                            //new add
-//                            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_MOUNTED);
-//                            Uri contentUri = Uri.fromFile(captureFile);
-//                            mediaScanIntent.setData(contentUri);
-//                            sendBroadcast(mediaScanIntent);
+                            // convert byte array into bitmap
+
+                            Bitmap loadedImage = null;
+
+                            loadedImage = BitmapFactory.decodeByteArray(bytes, 0,
+                                    bytes.length);
+
+                            Bitmap bitmap = Bitmap.createBitmap(loadedImage, 0, 0, loadedImage.getWidth(), loadedImage.getHeight());
+                            // quay hinh anh khi luu
+                            if(current_camera == 0) {
+                                bitmap = rotateImage(bitmap, 90);
+                            }
+                            else if(current_camera==1){
+                                bitmap = rotateImage(bitmap, -90);
+                            }
+                            File dir = new File(
+                                    Environment.getExternalStoragePublicDirectory(
+                                            Environment.DIRECTORY_PICTURES), "MyPhotos");
+
+                            boolean success = true;
+                            if (!dir.exists()) {
+                                try {
+                                    success = dir.mkdirs();
+                                } catch (Exception e) {
+                                    Toast.makeText(getBaseContext(), e.getMessage() + " " + e.getCause(),
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                            if (success) {
+                                imageFile = new File(dir.getAbsolutePath()
+                                        + File.separator
+                                        + getPhotoTime()
+                                        + "Image.jpg");
+
+                                imageFile.createNewFile();
+                            } else {
+                                Toast.makeText(getBaseContext(), "Image Not saved",
+                                        Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            ByteArrayOutputStream ostream = new ByteArrayOutputStream();
+
+                            // save image into gallery
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, ostream);
+
+                            FileOutputStream fout = new FileOutputStream(imageFile);
+                            fout.write(ostream.toByteArray());
+                            fout.close();
+                            ContentValues values = new ContentValues();
+
+                            values.put(MediaStore.Images.Media.DATE_TAKEN,
+                                    System.currentTimeMillis());
+                            values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+                            values.put(MediaStore.MediaColumns.DATA,
+                                    imageFile.getAbsolutePath());
+
+                            FaceTrackerActivity.this.getContentResolver().insert(
+                                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
 
 
-                        } catch (IOException e) {
+  //                              loadedImage = overlay(bitmap,loadBitmapFromView(mGraphicOverlay));
+   //                             loadedImage =RotateBitmap(loadedImage,90);
+   //                         saveToInternalStorage(loadedImage);
+
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
-
                     private String getPhotoTime(){
                         SimpleDateFormat sdf=new SimpleDateFormat("ddMMyy_hhmmss");
                         return sdf.format(new Date());
                     }
-
+                    private Bitmap rotateImage(Bitmap source, float angle) {
+                        Matrix matrix = new Matrix();
+                        matrix.postRotate(angle);
+                        return Bitmap.createBitmap(source, 0, 0, source.getWidth(),   source.getHeight(), matrix,
+                                true);
+                    }
                 });
-
             }
         });
+
+
+//            @Override
+//            public void onClick(View v) {
+//                mCameraSource.takePicture(null, new CameraSource.PictureCallback() {
+//
+//                    @Override
+//                    public void onPictureTaken(byte[] bytes) {
+//                        Log.d(TAG, "onPictureTaken - jpeg");
+//                        capturePic(bytes);
+//                    }
+//
+//                    private void capturePic(byte[] bytes) {
+//                        try {
+//                           // String mainpath = getExternalStorageDirectory() + separator + "MaskIt" + separator + "images" + separator;
+//                            String mainpath = getExternalStorageDirectory() + separator + "DCIM" + separator + "Camera" + separator;
+//                            File basePath = new File(mainpath);
+//                            if (!basePath.exists())
+//                                Log.d("CAPTURE_BASE_PATH", basePath.mkdirs() ? "Success": "Failed");
+//                            File captureFile = new File(mainpath + "photo_" + getPhotoTime() + ".jpg");
+//                            if (!captureFile.exists())
+//                                Log.d("CAPTURE_FILE_PATH", captureFile.createNewFile() ? "Success": "Failed");
+//                            FileOutputStream stream = new FileOutputStream(captureFile);
+//                            stream.write(bytes);
+//                            stream.flush();
+//                            stream.close();
+//                            //new add
+////                            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_MOUNTED);
+////                            Uri contentUri = Uri.fromFile(captureFile);
+////                            mediaScanIntent.setData(contentUri);
+////                            sendBroadcast(mediaScanIntent);
+//
+//
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+//                    private String getPhotoTime(){
+//                        SimpleDateFormat sdf=new SimpleDateFormat("ddMMyy_hhmmss");
+//                        return sdf.format(new Date());
+//                    }
+//
+//                });
+//
+//            }
+//        });
 
         btn_gallery.setOnClickListener(new View.OnClickListener() {
             @Override

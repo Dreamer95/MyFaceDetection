@@ -7,6 +7,8 @@
         android:drawable="@drawable/camaction" />
     <item
         android:drawable="@drawable/gallery" />
+    <item
+        android:drawable="@drawable/paragon" />
 
 </selector>
 

@@ -75,12 +75,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/dong/MyFaceDetection/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/home/dong/MyFaceDetection/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_140cd90c6c357e5074401c4e9273ffd123c0da1f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/dong/.android/build-cache/26f9556cb9c6da16288e1a9face7c7d1a4af0c1d/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
         <dex dex="/home/dong/Downloads/android-vision-master/visionSamples/FaceTracker/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_17c993a643dbd3cf1350e34becd702da52f8106d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/dong/MyFaceDetection/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b093fd0dba7040ab6c6a86f50197a2c0cb08ee96">
+        <dex dex="/home/dong/MyFaceDetection/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1744604b79fd5191f73ad5763eb73ae115e9cb6b/classes.dex" />
     </item>
     <item
         is-multidex="true"

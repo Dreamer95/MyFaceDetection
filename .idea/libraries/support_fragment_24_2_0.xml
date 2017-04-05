@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="support-fragment-24.2.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/26f9556cb9c6da16288e1a9face7c7d1a4af0c1d/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/26f9556cb9c6da16288e1a9face7c7d1a4af0c1d/output/jars/libs/internal_impl-24.2.0.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/26f9556cb9c6da16288e1a9face7c7d1a4af0c1d/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/24.2.0/support-fragment-24.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
