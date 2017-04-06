@@ -9,6 +9,11 @@
         android:drawable="@drawable/gallery" />
     <item
         android:drawable="@drawable/paragon" />
+    <item
+        android:drawable="@drawable/effect" />
+    <item
+        android:drawable="@drawable/select" />
+
 
 </selector>
 
