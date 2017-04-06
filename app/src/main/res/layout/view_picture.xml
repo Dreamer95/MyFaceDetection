@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#484441"
+
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:alwaysDrawnWithCache="false"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/btnEffects"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/effect" />
+
+
+</RelativeLayout>

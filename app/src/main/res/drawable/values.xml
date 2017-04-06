@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selector style for listrow -->
+    <item
+        android:drawable="@drawable/camera" />
+    <item
+        android:drawable="@drawable/camaction" />
+    <item
+        android:drawable="@drawable/gallery" />
+    <item
+        android:drawable="@drawable/effect"/>
+    <item
+        android:drawable="@drawable/select"/>
+
+</selector>
+
+
+
